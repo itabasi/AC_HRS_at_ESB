@@ -1,26 +1,23 @@
+#====== for ifarm =======#
+CC=/usr/bin/gcc
+CXX=/usr/bin/g++
+ROOT	= /apps/root/6.12.06/root/bin/root
 #====== for tfarm =======#
-CC=/usr/local/bin/gcc
-CXX=/usr/local/bin/g++
+#CC=/usr/local/bin/gcc
+#CXX=/usr/local/bin/g++
+#ROOT	= /home/dragon/sfw/root-6.08.06-install/bin/root
+##ROOT	= /cern/root/bin/root
 #====== for farm =======#
 #CC=gcc
 #CXX=g++
-
-#CC=icc
-#CXX=icpc
-#CFLAGS  = -parallel -par-report3 -par-threshold0 -O3
+#ROOT	= /usr/local/cern/root_v5.32.04.x86_64_fc8_gcc4.1.2/bin
+###############################
 
 CFLAGS  = -O2
+#CFLAGS  = -parallel -par-report3 -par-threshold0 -O3
 
 BINDIR = ./bin
 LIBDIR = ./lib
-
-#====== for farm =======#
-#ROOT	= /usr/local/cern/root_v5.32.04.x86_64_fc8_gcc4.1.2/bin
-#====== for tfarm =======#
-#ROOT	= /cern/root/bin/root
-ROOT	= /home/dragon/sfw/root-6.08.06-install/bin/root
-
-
 
 ROOTFLAGS = $(shell $(ROOT)-config --cflags)
 ROOTLIBS = $(shell $(ROOT)-config --libs)

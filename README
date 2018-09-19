@@ -2,6 +2,32 @@
 //  READ ME  //
 // by Toyama //
 ///////////////
+
+//***********//
+//enviroments//
+//***********//
+These analysis codes can be work on farm(Tohoku), tfarm1(Tohoku machine at JLab), and ifart(JLab).
+Plz edit "makefile" and set proper paths of ROOT, CC, and CXX for your enviroment.
+
+//******//
+//How to//
+//******//
+1)After checking out repository, you can get root files(created by replay) by using following commands(except ifarm).
+$wget https://lambda.phys.tohoku.ac.jp/~toyama/hrs_ac_rootfiles.tar.gz
+(wget command doesn't work in ifarm(I don't know why). you can use scp command instead if you have an account in lambda machine.)
+
+$tar xzfv hrs_ac_rootfiles.tar.gz
+
+2)bin and lib directories have to be created before compiling.
+$mkdir bin
+$mkdir lib
+
+3)compile
+$make all
+
+4)execute
+ex) ./bin/AC_"xx" -f rootfiles/fadcAERO_111.root -w hoge.root
+
 Basically, you can see how to use my macros by execing with "-h" option.
 Usually I define like following...
   -f : input root file name
@@ -34,6 +60,10 @@ AC_ana2.cc
 //******//
 //others//
 //******//
+AC_draw.C
+  macro to draw fADC raw spectrum event by event.
+  it shows demonstration of fitting of fADC data.
+
 Tree.cc Tree.h
   many variables to readout from default rootfiles are defined 
 
