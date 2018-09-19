@@ -1,0 +1,44 @@
+///////////////
+//  READ ME  //
+// by Toyama //
+///////////////
+Basically, you can see how to use my macros by execing with "-h" option.
+Usually I define like following...
+  -f : input root file name
+  -w : output root file name
+  -p : input parameter file name
+  -n : Max Num of analyzed event
+
+
+//******//
+//toyama//
+//******//
+AC_calib.cc
+ conversion parameter adjustment for NPE.
+ created parameter will be conserved as "output.param"
+
+AC_tuning.cc
+ conversion parameter tuning.
+ created parameter will be conserved as **_tuned (** is input parameter file name)
+
+AC_ana1.cc
+ convert default root file to my root file(include timing info. NPE).
+
+AC_ana2.cc
+ further analysis for converted root file.
+   *sum of N.P.E.
+   *N.P.E. vs x position correlation
+   *effciency as a function of x position
+                                         etc.
+
+//******//
+//others//
+//******//
+Tree.cc Tree.h
+  many variables to readout from default rootfiles are defined 
+
+ParamMan.cc ParamMan.hh
+  definition of conversion parameter of AC
+
+Setting.cc Setting.h
+  useful functions to make beautiful figures
